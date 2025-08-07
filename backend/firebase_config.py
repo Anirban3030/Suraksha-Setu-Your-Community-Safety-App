@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 # Initialize Firebase Admin SDK
-firebase_creds = os.getenv("FIREBASE_CREDENTIALS","serviceAccountKey.json")
+firebase_creds = os.getenv("serviceAccountKey.json")
 cred = credentials.Certificate(firebase_creds)
 firebase_admin.initialize_app(cred)
 
