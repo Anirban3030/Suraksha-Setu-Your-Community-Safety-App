@@ -1,0 +1,7 @@
+.env
+serviceAccountKey.json
+__pycache__/
+*.pyc
+*.db
+*.sqlite3
+backend/uploads/
