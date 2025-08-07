@@ -1,5 +1,4 @@
 python-dotenv
-python-3.11.6
 streamlit==1.47.1
 pillow
 firebase-admin==7.1.0
