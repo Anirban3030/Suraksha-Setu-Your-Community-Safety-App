@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 1rem">
+  <head>
+    <title>Streamlit Folium Component</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Streamlit-folium component" />
+    <style>
+      .single > :nth-child(1) {
+        width: 100%;
+      }
+      .single > :nth-child(2) {
+        display: none;
+      }
+      .double .float-child {
+        width: 50%;
+        float: left;
+      }
+    </style>
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+      <div id="parent" class="float-container single">
+        <div class="float-child">
+          <div id="map_div"></div>
+        </div>
+        <div class="float-child">
+          <div id="map_div2"></div>
+        </div>
+      </div>
+    </div>
+    <span>&nbsp;</span>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>
