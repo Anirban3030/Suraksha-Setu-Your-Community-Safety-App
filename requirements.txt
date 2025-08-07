@@ -1,4 +1,4 @@
-python==3.13.4
+python
 streamlit==1.47.1
 pillow
 firebase-admin==7.1.0
