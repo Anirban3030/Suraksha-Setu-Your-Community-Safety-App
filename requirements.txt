@@ -13,3 +13,4 @@ streamlit_geolocation
 streamlit_folium
 pydantic==2.11.7
 ollama
+google-generativeai
