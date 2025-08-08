@@ -3,9 +3,10 @@ from backend.router import router
 from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
+#Adding CORSMiddleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Or set to specific frontend URL
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
