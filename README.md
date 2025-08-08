@@ -7,6 +7,10 @@ Whether it’s **accidents, waterlogging, fires, or other hazards**, users can i
 
 ---
 
+## Project image
+<p align="center">
+  <img src="assets/WebsiteUI.png" width="500"/>
+</p>
 ## 🚀 Features
 
 ### 🔍 Real-Time Incident Map
