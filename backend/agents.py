@@ -138,17 +138,17 @@ def infer_type_from_description(description, category):
     desc_lower = description.lower()
     cat_lower = category.lower() if category else ""
     
-    if any(word in desc_lower for word in ["march", "protest", "demonstration", "rally", "crowd", "stampede", "blockade", "sit-in"]):
+    if any(word in desc_lower for word in ["march", "protest", "demonstration", "rally", "crowd", "stampede", "blockade", "sit-in", "agitation", "dharna", "strike", "bandh"]):
         return "Protest / March"
-    elif any(word in desc_lower for word in ["accident", "crash", "collision", "hit", "injury", "fall", "roadblock", "traffic jam"]):
+    elif any(word in desc_lower for word in ["accident", "crash", "collision", "hit", "injury", "fall", "roadblock", "traffic jam", "skid", "wreck", "impact", "pile up", "head on"]):
         return "Accident"
-    elif any(word in desc_lower for word in ["fire", "burn", "smoke", "flame", "explosion", "blaze", "gas leak", "toxic"]):
+    elif any(word in desc_lower for word in ["fire", "burn", "smoke", "flame", "explosion", "blaze", "gas", "toxic", "electrocute", "synthesis", "short-circuit", "blast", "cylinder", "burnt alive"]):
         return "Fire"
-    elif any(word in desc_lower for word in ["flood", "water", "rain", "drainage", "waterlog", "standing water", "overflow"]):
+    elif any(word in desc_lower for word in ["flood", "water", "rain", "drainage", "waterlog", "standing water", "overflow", "tsunami", "storm", "submersion", "deep"]):
         return "Waterlogging"
-    elif any(word in desc_lower for word in ["construction", "work", "building", "road work", "repair", "infrastructure", "pavement", "digging"]):
+    elif any(word in desc_lower for word in ["construction", "work", "building", "road work", "repair", "infrastructure", "pavement", "digging", "demolition", "destruction"]):
         return "Construction Work in Progress"
-    elif any(word in desc_lower for word in ["theft", "crime", "steal", "assault", "vandal", "illegal", "robbery", "burglary", "attack"]):
+    elif any(word in desc_lower for word in ["theft", "crime", "steal", "assault", "vandal", "illegal", "robbery", "burglary", "attack", "manslaughter", "battery", "phosphorus"]):
         return "Crime"
     elif "protest" in cat_lower or "march" in cat_lower:
         return "Protest / March"
@@ -159,8 +159,8 @@ def infer_urgency_from_description(description):
     """Infer urgency from description keywords"""
     desc_lower = description.lower()
     
-    high_urgency_words = ["emergency", "urgent", "critical", "danger", "stampede", "fire", "accident", "injured", "many injured", "crowd surge", "blocked", "panic"]
-    low_urgency_words = ["minor", "small", "routine", "scheduled", "planned", "normal", "no immediate danger", "not serious", "not urgent", "not critical"]
+    high_urgency_words = ["emergency", "urgent", "critical", "danger", "stampede", "fire", "accident", "injured", "many injured", "crowd surge", "blocked", "panic", "blood", "death", "damage", "burn", "kill"]
+    low_urgency_words = ["minor", "small", "routine", "scheduled", "planned", "normal", "no immediate danger", "not serious", "not urgent", "not critical", "tiny", "inconvient", "miniscule"]
     
     if any(word in desc_lower for word in high_urgency_words):
         return "high"
