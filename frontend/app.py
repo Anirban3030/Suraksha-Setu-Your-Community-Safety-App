@@ -15,7 +15,7 @@ import json
 import time
 
 
-
+# adding deployed backend url 
 BACKEND_URL = os.getenv("BACKEND_URL", "http://127.0.0.1:8000")
 
 # Initialize Streamlit app
@@ -73,7 +73,6 @@ if not firebase_admin._apps:
 
 # Initialize Firestore client
 db = firestore.client()
-# Page config
 
 @st.cache_data(ttl=30)  # Cache for 30 seconds to improve performance
 def fetch_incidents_from_firebase():
@@ -93,7 +92,7 @@ def fetch_incidents_from_firebase():
 def extract_coordinates_from_location(location_text):
     """Extract latitude and longitude from location text"""
     try:
-        # Look for coordinates in parentheses like "(lat, lng)"
+        
         match = re.search(r'\((-?\d+\.?\d*),\s*(-?\d+\.?\d*)\)', location_text)
         if match:
             lat = float(match.group(1))
@@ -275,7 +274,7 @@ def format_time_ago(timestamp_str):
     except:
         return "Unknown"
 
-# ---------------- TAB 1: Report Incident ----------------
+
 
 
 
@@ -718,7 +717,7 @@ if submit:
             files = []
             for media in uploaded_media:
                 files.append(("file", (media.name, media, media.type)))
-
+            # storing the input data to backend using fastapi
             response = requests.post(
                 f"{BACKEND_URL}/report/",
                 data={
