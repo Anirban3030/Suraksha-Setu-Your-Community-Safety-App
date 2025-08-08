@@ -14,6 +14,8 @@ genai.configure(api_key=geminiapi)
 # Instantiate genai model
 llm = genai.GenerativeModel("gemini-1.5-flash-latest")
 
+# INPUT AGENT
+
 def input_agent(category, location, description):
     """Parse and structure input data"""
     # Convert UTC time to IST (Indian Standard Time, UTC+5:30)
@@ -25,6 +27,8 @@ def input_agent(category, location, description):
         "description": description,
         "submitted_at": ist_now.isoformat()
     }
+
+# CLASSIFICATION AGENT
 
 def classification_agent(parsed):
     """Classify incident type, urgency, and severity"""
@@ -89,7 +93,7 @@ Severity: [1/2/3/4/5]"""
         
     except Exception as e:
         return get_default_classification(parsed)
-
+# RESPONSE VALIDATION
 def validate_classification_response(response, parsed):
     """Validate and correct classification response"""
     valid_types = [
@@ -613,8 +617,8 @@ def should_use_llm_authority_routing(incident_type, description, current_authori
     complex_indicators = [
         len(current_authorities) >= 3,  # Multiple authorities already identified
         "multiple" in description or "various" in description,
-        any(word in description for word in ["chemical", "toxic", "explosion", "terror", "bomb"]),
-        any(word in description for word in ["hospital", "school", "stadium", "mall", "airport"]),
+        any(word in description for word in ["chemical", "toxic", "explosion", "terror", "bomb","terrorist attack","armed rebellion","naxal attacks","riots"]),
+        any(word in description for word in ["hospital", "school", "stadium", "mall", "airport","railway station","public gatherings"]),
         "stampede" in description,
         len(description.split()) > 20  # Detailed descriptions
     ]
