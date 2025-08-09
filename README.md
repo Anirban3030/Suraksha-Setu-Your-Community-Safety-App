@@ -9,7 +9,7 @@ Whether it’s **accidents, waterlogging, fires, or other hazards**, users can i
 
 ## Project image
 <p align="center">
-  <img src="assets/WebsiteUI.png" width="700"/>
+  <img src="assets/WebsiteUI.png" width="800"/>
 </p>
 
 
