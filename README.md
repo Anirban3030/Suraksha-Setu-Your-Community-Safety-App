@@ -5,6 +5,7 @@
 Suraksha Setu is an **Agentic AI-powered public safety platform** that enables citizens to **report, view, and stay informed about real-time incidents** in their vicinity.  
 Whether it’s **accidents, waterlogging, fires, or other hazards**, users can instantly access **hyperlocal safety intelligence** and plan their routes accordingly.
 
+https://suraksha-setu-your-community-safety.onrender.com/
 ---
 
 ## Project image
